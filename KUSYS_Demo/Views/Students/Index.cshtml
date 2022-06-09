@@ -1,0 +1,35 @@
+﻿@page
+@model KUSYS_Demo.Views.Students.IndexModel
+@{
+}
+
+<br />
+<h2>List of Students</h2>
+<a class='btn btn-primary btn-sm' href='/Students/Create'>New Student</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Student ID</th>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Birthdate</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.listStudents)
+		{
+		<tr>
+			<td>@item.id</td>
+			<td>@item.studentid</td>
+			<td>@item.name</td>
+			<td>@item.surname</td>
+			<td>@item.birthday</td>
+			<td>
+				<a class="btn btn-primary btn-sm" href="/Students/Edit?id=@item.id">Edit</a>
+				<a class="btn btn-primary btn-sm" href="/Students/Delete?id=@item.id">Delete</a>
+			</td>
+		</tr>
+		}
+	</tbody>
+</table>
